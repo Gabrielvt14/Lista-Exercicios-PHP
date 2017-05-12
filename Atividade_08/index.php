@@ -11,7 +11,7 @@ for ($i = 0; $i <= 50; $i += 2) {
 	 * Outra forma de solução, utilizando array
 	 *
 	 *	$n[] = $i;
-		$sum = array_sum($n);
+	 *	$sum = array_sum($n);
 	 * 
 	 */
 }
