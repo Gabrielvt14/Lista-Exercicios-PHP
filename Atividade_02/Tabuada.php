@@ -13,5 +13,5 @@
 $nr = isset($_POST['nr']) ? $_POST['nr']: '';
 
 for ($i = 0; $i <= 10; $i++) {
-	echo $nr . ' x ' . $i . ' = ' . $nr*$i . '<br />';
+	echo $nr . ' x ' . $i . ' = ' . $nr * $i . '<br />';
 }
