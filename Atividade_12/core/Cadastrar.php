@@ -23,22 +23,21 @@ class Cadastrar extends Aluno
 		} catch (PDOException $e) {
 			die('ERROOOOO' . $e->getMessage());
 		}
-		$insert = "INSERT INTO aluno SET nome = '$this->aluno->getNome()', nota1 = '$this->aluno->getN1()', nota2 = '$this->getN2()', nota3 = '$this->getN3()', nota4 = '$this->getN4()'";
-	/*	$stmt = $pdo->prepare($insert);
+		$insert = "INSERT INTO aluno(nome, nota1, nota2, nota3, nota4)
+					VALUES(:nome, :nota1, :nota2, :nota3, :nota4)";
+		$stmt = $pdo->prepare($insert);
 		$stmt->bindValue(':nome', $this->aluno->getNome());
 		$stmt->bindValue(':nota1', $this->aluno->getN1());
 		$stmt->bindValue(':nota2', $this->aluno->getN2());
 		$stmt->bindValue(':nota3', $this->aluno->getN3());
-		$stmt->bindValue(':nota4', $this->aluno->getN4());*/
+		$stmt->bindValue(':nota4', $this->aluno->getN4());
 
-		$pdo->query($insert);
-
-	//	if ($stmt->execute()) {
-	//		header('Location: ../index.php');	
-	//	} else {
-	//		die('Erro ao cadastrar aluno');
+		if ($stmt->execute()) {
+			header('Location: ../index.php');	
+		} else {
+			die('Erro ao cadastrar aluno');
 			//var_dump($this->aluno->getNome());exit;
-	//	}
+		}
 	}
 }
 
