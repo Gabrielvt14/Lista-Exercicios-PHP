@@ -1,3 +1,23 @@
+<?php
+
+  require_once 'core/MostraAluno.php';
+
+  $id = isset($_GET['id']) ? $_GET['id']: null;
+
+  $mostraAluno = new MostraAluno();
+
+	$selectId = "SELECT * FROM aluno WHERE id=:id";
+
+	$stmt = $mostraAluno->pdo->prepare($selectId);
+	$stmt->bindValue('id', $id, PDO::PARAM_INT);
+	$stmt->execute();
+	$id = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	if (! is_array($id)) {
+		echo "<script language='javascript' type='text/javascript'>alert('Não há nenhum usuário cadastrado com esse ID.');window.location.href='../index.php';</script>";
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,23 +67,26 @@
 
 <div class="container">
 	<div class="row">
-		<form method="POST" action="core/Cadastrar.php">
+		<form method="POST" action="core/Editar.php">
 		  <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		    <input type="text" class="form-control" name="nomeAluno" id="exampleInputNome1" aria-describedby="emailHelp" placeholder="Nome completo do aluno">
+		    <input type="text" class="form-control" name="nomeAluno" id="exampleInputNome1" aria-describedby="emailHelp" value="<?php echo $id['nome'] ?>">
 		  </div>
 		  <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3">
-		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota1" id="exampleInputNota1" placeholder="Nota 1">
+		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota1" id="exampleInputNota1" value="<?php echo $id['nota1'] ?>">
 		  </div>
 		  <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3">
-		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota2" id="exampleInputNota1" placeholder="Nota 2">
+		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota2" id="exampleInputNota1" value="<?php echo $id['nota2'] ?>">
 		  </div>
 		  <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3">
-		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota3" id="exampleInputNota1" placeholder="Nota 3">
+		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota3" id="exampleInputNota1" value="<?php echo $id['nota3'] ?>">
 		  </div>
 		  <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3">
-		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota4" id="exampleInputNota1" placeholder="Nota 4">
+		    <input type="number" min="0" max="10" step="any" class="form-control" name="nota4" id="exampleInputNota1" value="<?php echo $id['nota4'] ?>">
 		  </div>
-		  	<button type="submit" min="0" max="10" class="btn btn-primary">Cadastrar</button>
+		  <div>
+		    <input type="hidden" name="id" value="<?php echo $id['id'] ?>">
+		  </div>
+		  	<button type="submit" min="0" max="10" class="btn btn-primary">Atualizar</button>
 		</form>
 	</div>
 </div>

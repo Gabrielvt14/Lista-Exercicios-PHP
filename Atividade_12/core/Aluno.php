@@ -2,8 +2,7 @@
 
 class Aluno
 {
-	protected $nome;
-	protected $media;
+	protected $nome, $media;
 	protected $n1, $n2, $n3, $n4;
 
 	public function __construct($dados)
@@ -13,6 +12,17 @@ class Aluno
 		$this->n2 	= $dados['nota2'];
 		$this->n3 	= $dados['nota3'];
 		$this->n4 	= $dados['nota4'];
+		$this->setMedia();
+	}
+
+	public function setMedia()
+	{
+		$this->media = ($this->getN1() + $this->getN2() + $this->getN3() + $this->getN4()) / 4;
+	}
+
+	public function getMedia()
+	{
+		return $this->media;
 	}
 
 	public function getNome()
