@@ -79,7 +79,7 @@ class Editar
 		$stmt->bindParam(':id', $this->getId(), PDO::PARAM_INT);
 		
 		if ($stmt->execute()) {
-			header('Location: ../index.php');
+			header('Location: ../home.php');
 		} else {
 			die('Erro ao cadastrar aluno');
 		}

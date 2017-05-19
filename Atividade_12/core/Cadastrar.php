@@ -33,7 +33,7 @@ class Cadastrar extends Aluno
 		$stmt->bindValue(':media', $this->aluno->getMedia());
 		
 		if ($stmt->execute()) {	//	da maneira que esta o código execute() retorna false
-			header('Location: ../index.php');
+			header('Location: ../home.php');
 		} else {
 			die('Erro ao cadastrar aluno');
 			//var_dump($this->aluno->getNome());exit;

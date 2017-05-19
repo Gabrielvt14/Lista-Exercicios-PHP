@@ -1,9 +1,32 @@
+<?php
+  session_start();
+
+  require_once 'core/Check.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 
+<link rel="apple-touch-icon" sizes="57x57" href="midia/img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="midia/img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="midia/img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="midia/img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="midia/img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="midia/img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="midia/img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="midia/img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="midia/img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="midia/img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="midia/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="midia/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="midia/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="midia/img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="midia/img/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.min.css">
 
 	<meta charset="utf-8">
 	<title>Cadastro de alunos</title>
@@ -30,7 +53,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      	<li><a href="index.php"><u>Home</u></a></li>
+      	<li><a href="home.php"><u>Home</u></a></li>
   	  </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -101,9 +124,12 @@
 <!--footer start from here-->
 
 <div class="copyright">
-  <div class="container">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
       <p><?php echo date('Y'); ?> - Desenvolvido por: <a href="https://www.github.com/Gabrielvt14" target="_blank">Gabriel Vieira</a></p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+      <p>Código fonte deste projeto <a href="https://github.com/Gabrielvt14/Lista-Exercicios-PHP/tree/master/Atividade_12" target="_blank">aqui</a></p>
     </div>
   </div>
 </div>

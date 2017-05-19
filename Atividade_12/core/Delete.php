@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+require_once 'Check.php';
+
 class Delete
 {
 	private $id;
@@ -32,9 +36,9 @@ class Delete
 		$stmt->bindValue(':id', $this->getId(), PDO::PARAM_INT);
 
 		if ($stmt->execute()) {
-			header('Location: ../index.php');
+			header('Location: ../home.php');
 		} else {
-			echo "<script language='javascript' type='text/javascript'>alert('Erro ao deletar usuário.');window.location.href='../index.php';</script>";
+			echo "<script language='javascript' type='text/javascript'>alert('Erro ao deletar usuário.');window.location.href='../home.php';</script>";
 		}
 	}
 }

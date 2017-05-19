@@ -7,12 +7,6 @@ body {
 
 * { color:#fff; text-decoration: none;}
 
-/*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -196,7 +190,7 @@ td,
 th {
   padding: 0;
 }
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
 @media print {
   *,
   *:before,
@@ -4179,7 +4173,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  /*border: 1px solid transparent;*/
+
 }
 @media (min-width: 768px) {
   .navbar {
@@ -6776,7 +6770,7 @@ body{
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+
 
 #txt {
 	font-family: RopaSans;
