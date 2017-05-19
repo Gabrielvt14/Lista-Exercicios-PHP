@@ -1,0 +1,26 @@
+CREATE DATABASE alnuos;
+
+USE alunos;
+
+CREATE TABLE aluno
+(
+	'id' INT NOT NULL AUTO_INCREMENT,
+	'nome' VARCHAR(100) NOT NULL,
+	'nota' FLOAT NOT NULL,
+	'nota2' FLOAT NOT NULL,
+	'nota3' FLOAT NOT NULL,
+	'nota4' FLOAT NOT NULL,
+	'media' FLOAT NOT NULL ,
+	PRIMARY KEY (`id`)
+)
+	ENGINE = InnoDB CHARSET=utf16 COLLATE utf16_unicode_ci;
+
+CREATE TABLE usuario
+(
+	'id' INT NOT NULL AUTO_INCREMENT,
+	'nome' VARCHAR(100) NOT NULL,
+	'email' VARCHAR(255) NOT NULL,
+	'senha' VARCHAR(500) NOT NULL,
+	PRIMARY KEY (`id`)
+)
+	ENGINE = InnoDB CHARSET=utf32 COLLATE utf32_unicode_ci;
